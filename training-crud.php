@@ -28,7 +28,7 @@ final class Training_CRUD {
      */
     private function __construct() {
 
-        // $this->include();
+        $this->include();
         $this->define();
         $this->hooks();
     }
@@ -54,7 +54,7 @@ final class Training_CRUD {
      * All hooks
      */
     private function hooks() {
-
+        new App\Shortcode();
     }
 
 
