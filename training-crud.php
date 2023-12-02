@@ -26,8 +26,35 @@ final class Training_CRUD {
     /**
      * Class Constructor
      */
-    function __construct() {
-        
+    private function __construct() {
+
+        // $this->include();
+        $this->define();
+        $this->hooks();
+    }
+
+    /**
+     * Include all needed files
+     */
+    private function include() {
+        require_once( dirname( __FILE__ ) . '/inc/functions.php' );
+        require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
+    }
+
+    /**
+     * define all constant
+     */
+    private function define() {
+        define( 'TR_CRUD', __FILE__ );
+        define( 'TR_CRUD_DIR', dirname( TR_CRUD ) );
+        define( 'TR_CRUD_ASSET', plugins_url( 'assets', TR_CRUD ) );
+    }
+
+    /**
+     * All hooks
+     */
+    private function hooks() {
+
     }
 
 
