@@ -11,6 +11,8 @@
  * Text Domain:       tr-crud
 */
 
+namespace Habib\TrainingCrud;
+
 if( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
