@@ -1,6 +1,8 @@
 <?php
     // Access the global $post variable
     global $post;
+    global $wpdb;
+    $table_name = TR_CRUD_TABLE;
 
     if ($post) {
         // Get the post slug
@@ -9,7 +11,20 @@
         $add_new_url    = add_query_arg( 'tc_task', 'add', site_url( $current_slug ) );
     }
 
-    $tc_task = $_GET['tc_task'] ?? '';
+    $tc_task    = $_GET['tc_task'] ?? '';
+    $tc_id      = $_GET['id'] ?? '';
+
+    if( isset( $tc_task ) && $tc_task == 'delete' && isset( $_GET['id'] ) && $tc_id != '' ) {
+
+        $result = $wpdb->delete(
+            $table_name,
+            array('id' => $tc_id  )
+        );
+
+        if( $result ) {
+            printf( '<script>window.location.href="%s";</script>', site_url( $current_slug ) );
+        }
+    }
 
 ?>
 <div class="tc-admin-container">
@@ -40,8 +55,6 @@
                     </thead>
                     <tbody>
                         <?php 
-                            global $wpdb;
-                            $table_name = TR_CRUD_TABLE;
                             // SQL query to select all data from the table
                             $query = "SELECT * FROM $table_name";
 
