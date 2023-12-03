@@ -1,5 +1,13 @@
 <?php
-    $add_new_url    = add_query_arg( 'tc_add', 'true', site_url() );
+    // Access the global $post variable
+    global $post;
+
+    if ($post) {
+        // Get the post slug
+        $current_slug = $post->post_name;
+
+        $add_new_url    = add_query_arg( 'tc_add', 'true', site_url( $current_slug ) );
+    }
 ?>
 <div class="tc-admin-container">
     <h2><?php printf( "%s %s", esc_html__( 'Year' ), date("Y") ); ?></h2>
