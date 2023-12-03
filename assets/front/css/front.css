@@ -7,10 +7,3 @@
     font-weight: 700;
     color: #333333;
 }
-.tc-admin-table-warpper{
-    width: 100%;
-    border: 1px solid #ddd;
-}
-.tc-table-heading{}
-.tc-table-heading .tc-th{}
-.tc-table-heading .tc-td{}
