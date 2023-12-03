@@ -19,7 +19,9 @@
         <p class="tc-addnew"><a href="<?php echo esc_url( $add_new_url ); ?>"><?php esc_html_e( 'Add New Item' ); ?></a></p>
         <?php 
             if( isset( $tc_task ) && 'add' == $tc_task ) {
-                echo "Hello";
+                
+                include_once( TR_CRUD_DIR . "/views/form/add-new.php" );
+
             }else{
                 ?>
                 <table>
