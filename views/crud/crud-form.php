@@ -39,19 +39,48 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Month</td>
-                            <td>Start Date</td>
-                            <td>End Date</td>
-                            <td>Department</td>
-                            <td>Program</td>
-                            <td>Max no. of participants</td>
-                            <td>
-                                <a href="#">Edit</a> |
-                                <a href="#">Update</a> |
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
+                        <?php 
+                            global $wpdb;
+                            $table_name = TR_CRUD_TABLE;
+                            // SQL query to select all data from the table
+                            $query = "SELECT * FROM $table_name";
+
+                            // Retrieve data from the table
+                            $results = $wpdb->get_results( $query );
+
+                            // Check if there are results
+                            if ( $results ) {
+                                foreach ( $results as $row ) {
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <?php esc_html_e( $row->tc_month ); ?>
+                                        </td>
+                                        <td>
+                                            <?php esc_html_e( $row->tc_start_date ); ?>
+                                        </td>
+                                        <td>
+                                            <?php esc_html_e( $row->tc_end_date ); ?>
+                                        </td>
+                                        <td>
+                                            <?php esc_html_e( $row->tc_depart ); ?>
+                                        </td>
+                                        <td>
+                                            <?php esc_html_e( $row->tc_program ); ?>
+                                        </td>
+                                        <td>
+                                            <?php esc_html_e( $row->tc_number ); ?>
+                                        </td>
+                                        <td>
+                                            <a href="#">Edit</a> |
+                                            <a href="#">Update</a> |
+                                            <a href="#">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                        ?>
                     </tbody>
                 </table>
                 <?php
