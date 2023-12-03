@@ -18,7 +18,8 @@ class Shortcode {
      * Main CRUD shortcode
      */
     public function tc_crud() {
-        echo "Hello";
+        
+        include_once( TR_CRUD_DIR . "/views/crud/crud-form.php" );
     }
 
 
