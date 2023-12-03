@@ -9,12 +9,24 @@
         $tc_program     = $_POST['tc_program'] ?? '';
         $tc_number      = $_POST['tc_number'] ?? '';
 
-        echo $tc_month . $tc_start_date . $tc_end_date . $tc_depart . $tc_program . $tc_number ;
+        if( ! in_array( '', [ $tc_month, $tc_start_date, $tc_end_date, $tc_depart, $tc_program, $tc_number ] ) ) {
+            global $wpdb;
 
-        
-        
+            $table_name = TR_CRUD_TABLE;
+
+            $data_to_insert = array(
+                'tc_month'      => $tc_month,
+                'tc_start_date' => $tc_start_date,
+                'tc_end_date'   => $tc_end_date,
+                'tc_depart'     => $tc_depart,
+                'tc_program'    => $tc_program,
+                'tc_number'     => $tc_number,
+            );
+
+            // Insert data into the table
+            $wpdb->insert( $table_name, $data_to_insert );
+        }
     }
-
 ?>
 
 <form method="POST">

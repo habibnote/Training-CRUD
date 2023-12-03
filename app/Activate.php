@@ -21,7 +21,7 @@ class Activate {
         global $wpdb;
 
         //table name
-        $table_name = $table_name = $wpdb->prefix . 'tc_habib';
+        $table_name = TR_CRUD_TABLE;
         
         // Get the default character set and collation for the database
         $charset_collate = $wpdb->get_charset_collate();

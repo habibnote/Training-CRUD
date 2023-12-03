@@ -45,9 +45,11 @@ final class Training_CRUD {
      * define all constant
      */
     private function define() {
+        global $wpdb;
         define( 'TR_CRUD', __FILE__ );
         define( 'TR_CRUD_DIR', dirname( TR_CRUD ) );
         define( 'TR_CRUD_ASSET', plugins_url( 'assets', TR_CRUD ) );
+        define( 'TR_CRUD_TABLE', $wpdb->prefix . 'tc_habib' );
     }
 
     /**
