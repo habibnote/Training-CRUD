@@ -1,3 +1,22 @@
+<?php 
+
+    if( isset( $_POST['tc_submit'] ) ) {
+
+        $tc_month       = $_POST['tc_month'] ?? '';
+        $tc_start_date  = $_POST['tc_start_date'] ?? '';
+        $tc_end_date    = $_POST['tc_end_date'] ?? '';
+        $tc_depart      = $_POST['tc_depart'] ?? '';
+        $tc_program     = $_POST['tc_program'] ?? '';
+        $tc_number      = $_POST['tc_number'] ?? '';
+
+        echo $tc_month . $tc_start_date . $tc_end_date . $tc_depart . $tc_program . $tc_number ;
+
+        
+        
+    }
+
+?>
+
 <form method="POST">
     <label for="tc_month">Month:</label>
     <select id="tc_month" name="tc_month" required>

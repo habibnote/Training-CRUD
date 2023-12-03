@@ -20,7 +20,9 @@
         <?php 
             if( isset( $tc_task ) && 'add' == $tc_task ) {
                 
+                ob_start();
                 include_once( TR_CRUD_DIR . "/views/form/add-new.php" );
+                ob_end_flush();
 
             }else{
                 ?>
