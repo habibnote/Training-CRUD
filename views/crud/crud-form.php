@@ -72,9 +72,29 @@
                                             <?php esc_html_e( $row->tc_number ); ?>
                                         </td>
                                         <td>
-                                            <a href="#">Edit</a> |
-                                            <a href="#">Update</a> |
-                                            <a href="#">Delete</a>
+                                            <?php 
+                                                printf( 
+                                                    '<a href="%s">%s</a>',
+                                                    add_query_arg( ['tc_task' => 'edit', 'id' => $row->id ], site_url( $current_slug ) ),
+                                                    esc_html__( 'Edit' )
+                                                ); 
+                                            ?>
+                                             |
+                                            <?php 
+                                                printf( 
+                                                '<a href="%s">%s</a>',
+                                                    add_query_arg( ['tc_task' => 'update', 'id' => $row->id ], site_url( $current_slug ) ),
+                                                    esc_html__( 'Update' )
+                                                );
+                                            ?>
+                                            |
+                                            <?php 
+                                                printf( 
+                                                    '<a href="%s">%s</a>',
+                                                        add_query_arg( ['tc_task' => 'delete', 'id' => $row->id ], site_url( $current_slug ) ),
+                                                        esc_html__( 'Delete' )
+                                                );
+                                            ?>
                                         </td>
                                     </tr>
                                     <?php
