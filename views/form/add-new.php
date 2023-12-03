@@ -1,5 +1,13 @@
 <?php 
 
+    // Access the global $post variable
+    global $post;
+
+    if ($post) {
+        // Get the post slug
+        $current_slug = $post->post_name;
+    }
+
     if( isset( $_POST['tc_submit'] ) ) {
 
         $tc_month       = $_POST['tc_month'] ?? '';
@@ -24,7 +32,12 @@
             );
 
             // Insert data into the table
-            $wpdb->insert( $table_name, $data_to_insert );
+            $result = $wpdb->insert( $table_name, $data_to_insert );
+
+            if( $result == true ) {
+
+                printf( '<script>window.location.href="%s";</script>', site_url( $current_slug ) );
+            }
         }
     }
 ?>
