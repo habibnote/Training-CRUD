@@ -1,11 +1,11 @@
 <?php
-
+    $add_new_url    = add_query_arg( 'tc_add', 'true', site_url() );
 ?>
 <div class="tc-admin-container">
     <h2><?php printf( "%s %s", esc_html__( 'Year' ), date("Y") ); ?></h2>
     <div class="tc-admin-table-warpper">
 
-        <p class="tc-addnew"><a href=""><?php esc_html_e( 'Add New Item' ); ?></a></p>
+        <p class="tc-addnew"><a href="<?php echo esc_url( $add_new_url ); ?>"><?php esc_html_e( 'Add New Item' ); ?></a></p>
         <table>
             <thead>
                 <tr>
