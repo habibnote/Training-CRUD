@@ -1,8 +1,11 @@
+<?php
+
+?>
 <div class="tc-admin-container">
-    <h2>Year 2023</h2>
+    <h2><?php printf( "%s %s", esc_html__( 'Year' ), date("Y") ); ?></h2>
     <div class="tc-admin-table-warpper">
 
-        <p class="tc-addnew"><a href="">Add New Item</a></p>
+        <p class="tc-addnew"><a href=""><?php esc_html_e( 'Add New Item' ); ?></a></p>
         <table>
             <thead>
                 <tr>
