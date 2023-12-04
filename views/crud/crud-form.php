@@ -39,7 +39,12 @@
                 include_once( TR_CRUD_DIR . "/views/form/add-new.php" );
                 ob_end_flush();
 
-            }else{
+            }else if( isset( $tc_task ) && 'update' == $tc_task ) {
+                ob_start();
+                include_once( TR_CRUD_DIR . "/views/form/update.php" );
+                ob_end_flush();
+            }
+            else{
                 ?>
                 <table>
                     <thead>
