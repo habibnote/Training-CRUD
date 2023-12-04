@@ -13,3 +13,13 @@ if( ! function_exists( 'is_table_exists' ) ) {
         return $table_exists;
     }
 }
+
+/**
+ * check which month is selected
+ */
+if( ! function_exists( 'is_month_exists' ) ) {
+
+    function is_month_exists() {
+        
+    }
+}
