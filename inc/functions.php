@@ -17,9 +17,12 @@ if( ! function_exists( 'is_table_exists' ) ) {
 /**
  * check which month is selected
  */
-if( ! function_exists( 'is_month_exists' ) ) {
+if( ! function_exists( 'month_exists' ) ) {
 
-    function is_month_exists() {
-        
+    function month_exists( $current_month, $saved_month ) {
+
+        if( $current_month == $saved_month ) {
+            return 'selected';
+        }
     }
 }

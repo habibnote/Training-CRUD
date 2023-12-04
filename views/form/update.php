@@ -54,28 +54,26 @@
             $tc_id
         );
 
-        $row = $wpdb->get_row( $query );
-
-        
-
+        $row            = $wpdb->get_row( $query );
+        $saved_month    = $row->tc_month;
         ?>
 
             <form method="POST">
                 <label for="tc_month">Month:</label>
                 <select id="tc_month" name="tc_month" required>
                     <option value="" disabled selected>Select Month</option>
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
+                    <option value="January" <?php esc_attr_e( month_exists( 'January', $saved_month ) ); ?> >January</option>
+                    <option value="February" <?php esc_attr_e( month_exists( 'February', $saved_month ) ); ?> >February</option>
+                    <option value="March" <?php esc_attr_e( month_exists( 'March', $saved_month ) ); ?> >March</option>
+                    <option value="April" <?php esc_attr_e( month_exists( 'April', $saved_month ) ); ?> >April</option>
+                    <option value="May" <?php esc_attr_e( month_exists( 'May', $saved_month ) ); ?> >May</option>
+                    <option value="June" <?php esc_attr_e( month_exists( 'June', $saved_month ) ); ?> >June</option>
+                    <option value="July" <?php esc_attr_e( month_exists( 'July', $saved_month ) ); ?> >July</option>
+                    <option value="August" <?php esc_attr_e( month_exists( 'August', $saved_month ) ); ?> >August</option>
+                    <option value="September" <?php esc_attr_e( month_exists( 'September', $saved_month ) ); ?> >September</option>
+                    <option value="October" <?php esc_attr_e( month_exists( 'October', $saved_month ) ); ?> >October</option>
+                    <option value="November" <?php esc_attr_e( month_exists( 'November', $saved_month ) ); ?> >November</option>
+                    <option value="December" <?php esc_attr_e( month_exists( 'December', $saved_month ) ); ?> >December</option>
                 </select>
                 
                 <label for="tc_start_date">Start Date: </label>
