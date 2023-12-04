@@ -1,5 +1,12 @@
 <?php
     
+    global $wpdb;
+    $table_name = TR_CRUD_TABLE;
+
+    $query = "SELECT * FROM $table_name";
+
+    // Retrieve data from the table
+    $results = $wpdb->get_results( $query );
 ?>
 
 <div class="tc_view_table">
@@ -9,7 +16,7 @@
                 <th rowspan="2">S1 No.</th>
                 <th rowspan="2">Month & Year</th>
                 <th colspan="2">Date</th>
-                <th rowspan="2">No of Dates</th>
+                <th rowspan="2">Department</th>
                 <th rowspan="2">Title of the Traning/Workshop</th>
                 <th rowspan="2">Max. No. Participants</th>
             </tr>
@@ -20,15 +27,23 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>July</td>
-                <td>10-11</td>
-                <td>10-11</td>
-                <td></td>
-                <td>Workshop</td>
-                <td>25</td>
-            </tr>
+            <?php
+                if( $results ) {
+                    foreach( $results as $row ) {
+                        ?>
+                        <tr>
+                            <td><?php esc_html_e( $row->id . '.' );?></td>
+                            <td><?php esc_html_e( $row->tc_month );?></td>
+                            <td><?php esc_html_e( $row->tc_start_date );?></td>
+                            <td><?php esc_html_e( $row->tc_end_date );?></td>
+                            <td><?php esc_html_e( $row->tc_depart );?></td>
+                            <td><?php esc_html_e( $row->tc_depart );?></td>
+                            <td><?php esc_html_e( $row->tc_number );?></td>
+                        </tr>
+                        <?php
+                    }
+                }
+            ?>
         </tbody>
     </table>
 </div>
