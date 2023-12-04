@@ -13,6 +13,7 @@ class Shortcode {
     public function __construct() {
         add_action( 'wp_enqueue_scripts', [$this, 'enqueue_scripts'] );
         add_shortcode( 'tc_crud', [$this, 'tc_crud'] );
+        add_shortcode( 'tc_view', [$this, 'tc_view'] );
     }
 
     /**
@@ -21,6 +22,14 @@ class Shortcode {
     public function tc_crud() {
         
         include_once( TR_CRUD_DIR . "/views/crud/crud-form.php" );
+    }
+
+    /**
+     * View Table
+     */
+    public function tc_view() {
+
+        include_once( TR_CRUD_DIR . "/views/table/main-table.php" );
     }
 
     /**
