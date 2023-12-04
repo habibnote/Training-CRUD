@@ -87,14 +87,6 @@
                                         <td>
                                             <?php 
                                                 printf( 
-                                                    '<a href="%s">%s</a>',
-                                                    add_query_arg( ['tc_task' => 'edit', 'id' => $row->id ], site_url( $current_slug ) ),
-                                                    esc_html__( 'Edit' )
-                                                ); 
-                                            ?>
-                                             |
-                                            <?php 
-                                                printf( 
                                                 '<a href="%s">%s</a>',
                                                     add_query_arg( ['tc_task' => 'update', 'id' => $row->id ], site_url( $current_slug ) ),
                                                     esc_html__( 'Update' )
