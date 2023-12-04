@@ -1,3 +1,7 @@
+<?php
+    
+?>
+
 <div class="tc_view_table">
     <table>
         <thead>
@@ -14,5 +18,17 @@
                 <th>To</th>
             </tr>
         </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>July</td>
+                <td>10-11</td>
+                <td>10-11</td>
+                <td></td>
+                <td>Workshop</td>
+                <td>25</td>
+            </tr>
+        </tbody>
     </table>
 </div>
