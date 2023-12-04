@@ -13,7 +13,7 @@
         $current_slug = $post->post_name;
     }
 
-    if( isset( $_POST['tc_submit'] )  ) {
+    if( isset( $_POST['tc_update'] )  ) {
 
         $tc_month       = $_POST['tc_month'] ?? '';
         $tc_start_date  = $_POST['tc_start_date'] ?? '';
@@ -27,7 +27,7 @@
 
             $table_name = TR_CRUD_TABLE;
 
-            $data_to_insert = array(
+            $tc_update_data = array(
                 'tc_month'      => $tc_month,
                 'tc_start_date' => $tc_start_date,
                 'tc_end_date'   => $tc_end_date,
@@ -36,8 +36,12 @@
                 'tc_number'     => $tc_number,
             );
 
-            // Insert data into the table
-            $result = $wpdb->insert( $table_name, $data_to_insert );
+            $tc_where = array(
+                'ID' => $tc_id
+            );
+
+            // Update data into the table
+            $result = $wpdb->update( $table_name, $tc_update_data, $tc_where);
 
             if( $result == true ) {
 
@@ -93,7 +97,7 @@
 
                 <br><br>
 
-                <button type="submit" name="tc_submit"><?php esc_html_e( 'Update' ); ?></button>
+                <button type="submit" name="tc_update"><?php esc_html_e( 'Update' ); ?></button>
             
             </form>
         <?php
