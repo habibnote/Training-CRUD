@@ -29,12 +29,28 @@
 
         <tbody>
             <?php
+                $row_span = '';
                 if( $results ) {
                     foreach( $results as $row ) {
                         ?>
                         <tr>
                             <td><?php esc_html_e( $row->id . '.' );?></td>
-                            <td><?php esc_html_e( $row->tc_month );?></td>
+
+                            <?php
+                                $tc_month       = get_option( 'tc_month' );
+                                $current_month  = $row->tc_month;
+                                if( $tc_month == $current_month && $tc_month != '' ) {
+                                    $row_span++;
+                                }else{
+                                    ?>
+                                        <td <?php if( $row_span ) { echo "rowspan={$row_span}"; } ?> >
+                                            <?php esc_html_e( $row->tc_month );?>
+                                        </td>   
+                                    <?php
+                                }
+                            ?>
+                            
+
                             <td><?php esc_html_e( $row->tc_start_date );?></td>
                             <td><?php esc_html_e( $row->tc_end_date );?></td>
                             <td> 
@@ -46,15 +62,17 @@
                                     $date2 = new DateTime( $end_date );
                 
                                     $interval   = $date1->diff( $date2 );
-
                                     echo $interval->format( '%a days' );
                                 ?> 
                             </td>
                             <td><?php esc_html_e( $row->tc_depart );?></td>
                             <td><?php esc_html_e( $row->tc_depart );?></td>
                             <td><?php esc_html_e( $row->tc_number );?></td>
+
+                            
                         </tr>
                         <?php
+                        update_option( 'tc_month', $row->tc_month );
                     }
                 }
             ?>
