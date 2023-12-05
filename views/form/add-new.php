@@ -67,10 +67,16 @@
     <input type="date" name="tc_end_date" class="tc-date-format" id="tc_end_date" required>
 
     <label for="tc_depart">Department:</label>
-    <input type="text" name="tc_depart" id="tc_depart" required>
+    <select name="tc_depart" id="tc_depart" required>
+        <option value="dep-1">dep-1</option>
+        <option value="dep-2">dep-2</option>
+    </select>
 
     <label for="tc_program">Program:</label>
-    <input type="text" name="tc_program" id="tc_program" required>
+    <select name="tc_program" id="tc_program" required>
+        <option value="program-1">program-1</option>
+        <option value="program-2">program-2</option>
+    </select>
 
     <label for="tc_number">Max no. of participants:</label>
     <input type="text" name="tc_number" id="tc_number" required>
