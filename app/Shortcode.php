@@ -21,11 +21,16 @@ class Shortcode {
      * Clear Table
      */
     public function clear_table() {
-
         global $wpdb;
-        
 
-        wp_send_json_success();
+        $table_name = TR_CRUD_TABLE;
+
+        $sql = "TRUNCATE TABLE $table_name";
+
+        if( $wpdb->query( $sql ) ) {
+            wp_send_json_success();
+        }
+
     }
 
     /**
