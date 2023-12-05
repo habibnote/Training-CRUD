@@ -16,6 +16,7 @@
                 <th rowspan="2">S1 No.</th>
                 <th rowspan="2">Month & Year</th>
                 <th colspan="2">Date</th>
+                <th rowspan="2">No. of Days</th>
                 <th rowspan="2">Department</th>
                 <th rowspan="2">Title of the Traning/Workshop</th>
                 <th rowspan="2">Max. No. Participants</th>
@@ -36,6 +37,19 @@
                             <td><?php esc_html_e( $row->tc_month );?></td>
                             <td><?php esc_html_e( $row->tc_start_date );?></td>
                             <td><?php esc_html_e( $row->tc_end_date );?></td>
+                            <td> 
+                                <?php 
+                                    $start_date = $row->tc_start_date;
+                                    $end_date   = $row->tc_end_date;
+
+                                    $date1 = new DateTime( $start_date );
+                                    $date2 = new DateTime( $end_date );
+                
+                                    $interval   = $date1->diff( $date2 );
+
+                                    echo $interval->format( '%a days' );
+                                ?> 
+                            </td>
                             <td><?php esc_html_e( $row->tc_depart );?></td>
                             <td><?php esc_html_e( $row->tc_depart );?></td>
                             <td><?php esc_html_e( $row->tc_number );?></td>
