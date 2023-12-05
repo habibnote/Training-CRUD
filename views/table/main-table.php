@@ -29,14 +29,19 @@
 
         <tbody>
             <?php
-                
+                $all_month = [];
                 if( $results ) {
                     foreach( $results as $row ) {
                         ?>
                         <tr>
                             <td><?php esc_html_e( $row->id . '.' );?></td>
+                            <? $all_month[] = $row->tc_month; ?>
                             <td>
-                                <?php esc_html_e( $row->tc_month );?>
+                                <?php 
+                                    esc_html_e( $row->tc_month );
+                                    printf( "<p>%s<p>",date("Y") );
+                                ?>
+
                             </td>
                             <td><?php esc_html_e( $row->tc_start_date );?></td>
                             <td><?php esc_html_e( $row->tc_end_date );?></td>
