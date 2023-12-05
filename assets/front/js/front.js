@@ -7,8 +7,7 @@ jQuery(function($){
               action: 'clear_table',
             },
             success: function(response) {
-              // Process the response data
-              console.log(response);
+                location.reload();
             }
           });
     });
