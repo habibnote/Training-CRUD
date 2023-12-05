@@ -14,6 +14,18 @@ class Shortcode {
         add_action( 'wp_enqueue_scripts', [$this, 'enqueue_scripts'] );
         add_shortcode( 'tc_crud', [$this, 'tc_crud'] );
         add_shortcode( 'tc_view', [$this, 'tc_view'] );
+        add_action( 'wp_ajax_clear_table', [$this, 'clear_table'] );
+    }
+
+    /**
+     * Clear Table
+     */
+    public function clear_table() {
+
+        global $wpdb;
+        
+
+        wp_send_json_success();
     }
 
     /**
@@ -44,6 +56,9 @@ class Shortcode {
             
             wp_enqueue_style( 'front-css', TR_CRUD_ASSET . '/front/css/front.css', [], time(), 'all'  );
             wp_enqueue_script( 'front-js', TR_CRUD_ASSET . '/front/js/front.js', ['jquery'], time(), true );
+
+            $ajax_url = admin_url( 'admin-ajax.php' );
+            wp_localize_script( 'front-js', 'TC', array( 'ajax' => $ajax_url ) );
         }
     }
 }
