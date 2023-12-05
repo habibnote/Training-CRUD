@@ -61,10 +61,10 @@
     </select>
     
     <label for="tc_start_date">Start Date: </label>
-    <input type="date" name="tc_start_date" id="tc_start_date" required>
+    <input type="date" value="06/12/2023" class="tc-date-format" name="tc_start_date" id="tc_start_date" required>
 
     <label for="tc_end_date">Start Date: </label>
-    <input type="date" name="tc_end_date" id="tc_end_date" required>
+    <input type="date" name="tc_end_date" class="tc-date-format" id="tc_end_date" required>
 
     <label for="tc_depart">Department:</label>
     <input type="text" name="tc_depart" id="tc_depart" required>
