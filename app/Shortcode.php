@@ -28,7 +28,6 @@ class Shortcode {
         $sql = "TRUNCATE TABLE $table_name";
 
         if( $wpdb->query( $sql ) ) {
-            delete_option( 'tc_month' );
             wp_send_json_success();
         }
 
