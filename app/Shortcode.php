@@ -20,16 +20,18 @@ class Shortcode {
      * Main CRUD shortcode
      */
     public function tc_crud() {
-        
-        include_once( TR_CRUD_DIR . "/views/crud/crud-form.php" );
+        if( is_user_logged_in() ) {
+            include_once( TR_CRUD_DIR . "/views/crud/crud-form.php" );
+        }
     }
 
     /**
      * View Table
      */
     public function tc_view() {
-
-        include_once( TR_CRUD_DIR . "/views/table/main-table.php" );
+        if( is_user_logged_in() ) {
+            include_once( TR_CRUD_DIR . "/views/table/main-table.php" );
+        }
     }
 
     /**

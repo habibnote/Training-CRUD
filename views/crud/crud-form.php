@@ -118,7 +118,7 @@
         ?>
     </div>
     <p style="text-align: right;">
-        <button class="button" name="tc-clear-button"> 
+        <button class="button" id="tc-clear-button"> 
             <?php esc_html_e( 'Clear' );?>
         </button>
     </p>
