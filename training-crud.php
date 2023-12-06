@@ -58,6 +58,7 @@ final class Training_CRUD {
     private function hooks() {
         new App\Shortcode();
         new App\Activate();
+        new App\Admin();
     }
 
 
