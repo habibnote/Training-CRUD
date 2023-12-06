@@ -88,7 +88,6 @@ class Admin {
                 <br>
                 <?php
                     $tc_program_setting = get_option( 'tc_program_setting' );
-
                     if( $tc_program_setting ) {
                         ?>
                             <textarea id="tc_admin_program" cols="30" rows="10"><?php echo $tc_program_setting;?></textarea>

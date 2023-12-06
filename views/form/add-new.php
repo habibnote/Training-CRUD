@@ -68,12 +68,20 @@
 
     <label for="tc_depart">Department:</label>
     <select name="tc_depart" id="tc_depart" required>
-        <option value="dep-1">dep-1</option>
-        <option value="dep-2">dep-2</option>
+        <?php 
+            $tc_program_setting = get_option( 'tc_program_setting' );
+            $program_array = explode( "\n", $tc_program_setting );
+            foreach( $program_array as $value ) {
+                printf( "<option value='%s'>%s</option>", $value, $value); 
+            }
+        ?>
     </select>
 
     <label for="tc_program">Program:</label>
     <select name="tc_program" id="tc_program" required>
+        <?php 
+            
+        ?>
         <option value="program-1">program-1</option>
         <option value="program-2">program-2</option>
     </select>
