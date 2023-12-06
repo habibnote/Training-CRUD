@@ -70,11 +70,36 @@ class Admin {
                 <br>
                 <label for="tc_admin_department">Enter Departments:</label>
                 <br>
-                <textarea id="tc_admin_department" cols="30" rows="10"></textarea>
+                <?php 
+                    $tc_depart_setting = get_option( 'tc_depart_setting' );
+                    if( $tc_depart_setting ) {
+                        ?>
+                            <textarea value="<?php echo $tc_depart_setting; ?>" id="tc_admin_department" cols="30" rows="10"></textarea>
+                        <?php
+                    }else{
+                        ?>
+                        <textarea id="tc_admin_department" cols="30" rows="10"></textarea>
+                        <?php
+                    }
+                ?>
                 <br><br>
                 <label for="tc_admin_program">Enter Programs:</label>
                 <br>
-                <textarea id="tc_admin_program" cols="30" rows="10"></textarea>
+                <?php
+                    $tc_program_setting = get_option( 'tc_program_setting' );
+
+                    if( $tc_program_setting ) {
+                        ?>
+                            <textarea value="<?php echo $tc_program_setting;?>" id="tc_admin_program" cols="30" rows="10"></textarea>
+                        <?php
+                    }else {
+                        ?>
+                        <textarea id="tc_admin_program" cols="30" rows="10"></textarea>
+                        
+                        <?php
+                    }
+                ?>
+                
                 <br><br>
                 <button class="button button-primary" type="button" id="tc_admin_save_button">Save</button>
             </div>
