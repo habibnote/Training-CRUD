@@ -33,7 +33,14 @@ class Admin {
      * process admin ajax
      */
     public function admin_ajax() {
-        
+
+        $depart     = $_POST['depart'];
+        $program    = $_POST['program'];
+
+        update_option( 'tc_depart_setting', $depart );
+        update_option( 'tc_program_setting', $program );
+
+        wp_send_json_success();
     }
 
     /**

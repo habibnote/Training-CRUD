@@ -9,7 +9,7 @@ jQuery(function($){
         }else{
             $.ajax({
                 type: 'POST',
-                url: TC.ajax,
+                url: TC_ADMIN.ajax,
                 data: {
                     action: 'tc_update_setting',
                     depart: $tc_admin_department,
