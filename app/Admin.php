@@ -49,7 +49,18 @@ class Admin {
     public function crud_callback() {
         ?>
             <div class="wrap">
-                
+                <h1>Settings</h1>
+                <hr>
+                <br>
+                <label for="tc_admin_department">Enter Departments:</label>
+                <br>
+                <textarea id="tc_admin_department" cols="30" rows="10"></textarea>
+                <br><br>
+                <label for="tc_admin_program">Enter Programs:</label>
+                <br>
+                <textarea id="tc_admin_program" cols="30" rows="10"></textarea>
+                <br><br>
+                <button class="button button-primary" type="button" id="tc_admin_save_button">Save</button>
             </div>
         <?php
     }
