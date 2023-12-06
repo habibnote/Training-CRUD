@@ -61,7 +61,6 @@ final class Training_CRUD {
         new App\Admin();
     }
 
-
     /**
      * Singleton Instance
     */
