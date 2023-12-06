@@ -21,13 +21,15 @@ class Admin {
     public function add_menuPage() {
         
         add_menu_page(
-            'Habib',
-            'Habib',
+            'CRUD',
+            'CRUD',
             'manage_options',
-            'habib',
+            'traning-crud',
             function() {
                 echo "Hello";
-            }
+            },
+            'dashicons-list-view',
+            10
         );
     }
 
