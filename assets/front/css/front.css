@@ -19,3 +19,10 @@
     background-color: #00ff44;
     border-radius: 8px;
 }
+
+input{
+    width: 100%;
+}
+select{
+    width: 100%;
+}
