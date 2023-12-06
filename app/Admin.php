@@ -23,8 +23,17 @@ class Admin {
         wp_enqueue_style( 'admin-css', TR_CRUD_ASSET . '/admin/css/admin.css', [], time(), 'all'  );
         wp_enqueue_script( 'admin-js', TR_CRUD_ASSET . '/admin/js/admin.js', ['jquery'], time(), true );
 
+        add_action( 'wp_ajax_tc_update_setting', [$this, 'admin_ajax'] );
+
         $ajax_url = admin_url( 'admin-ajax.php' );
         wp_localize_script( 'admin-js', 'TC_ADMIN', array( 'ajax' => $ajax_url ) );
+    }
+
+    /**
+     * process admin ajax
+     */
+    public function admin_ajax() {
+        
     }
 
     /**
