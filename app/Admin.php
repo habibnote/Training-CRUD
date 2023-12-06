@@ -14,6 +14,7 @@ class Admin {
 
         add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'] );
         add_action( 'admin_menu' , [$this, 'add_menuPage'] );
+        add_action( 'wp_ajax_tc_update_setting', [$this, 'admin_ajax'] );
     }
 
     /**
@@ -22,8 +23,6 @@ class Admin {
     public function admin_enqueue_scripts() {
         wp_enqueue_style( 'admin-css', TR_CRUD_ASSET . '/admin/css/admin.css', [], time(), 'all'  );
         wp_enqueue_script( 'admin-js', TR_CRUD_ASSET . '/admin/js/admin.js', ['jquery'], time(), true );
-
-        add_action( 'wp_ajax_tc_update_setting', [$this, 'admin_ajax'] );
 
         $ajax_url = admin_url( 'admin-ajax.php' );
         wp_localize_script( 'admin-js', 'TC_ADMIN', array( 'ajax' => $ajax_url ) );
@@ -41,6 +40,8 @@ class Admin {
         update_option( 'tc_program_setting', $program );
 
         wp_send_json_success();
+
+        die;
     }
 
     /**
@@ -74,7 +75,7 @@ class Admin {
                     $tc_depart_setting = get_option( 'tc_depart_setting' );
                     if( $tc_depart_setting ) {
                         ?>
-                            <textarea value="<?php echo $tc_depart_setting; ?>" id="tc_admin_department" cols="30" rows="10"></textarea>
+                            <textarea id="tc_admin_department" cols="30" rows="10"><?php echo ($tc_depart_setting); ?></textarea>
                         <?php
                     }else{
                         ?>
@@ -90,7 +91,7 @@ class Admin {
 
                     if( $tc_program_setting ) {
                         ?>
-                            <textarea value="<?php echo $tc_program_setting;?>" id="tc_admin_program" cols="30" rows="10"></textarea>
+                            <textarea id="tc_admin_program" cols="30" rows="10"><?php echo $tc_program_setting;?></textarea>
                         <?php
                     }else {
                         ?>
