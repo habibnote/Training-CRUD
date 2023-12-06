@@ -25,12 +25,21 @@ class Admin {
             'CRUD',
             'manage_options',
             'traning-crud',
-            function() {
-                echo "Hello";
-            },
+            [$this, 'crud_callback'],
             'dashicons-list-view',
             10
         );
+    }
+
+    /**
+     * crud menu call back
+     */
+    public function crud_callback() {
+        ?>
+            <div class="wrap">
+                
+            </div>
+        <?php
     }
 
 }
