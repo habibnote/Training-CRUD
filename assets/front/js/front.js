@@ -12,5 +12,11 @@ jQuery(function($){
           });
     });
 
+    //delete alert
+    $('.tc-delete').on('click', function(event){
+      event.preventDefault(); 
+      
+    });
+
     
 });

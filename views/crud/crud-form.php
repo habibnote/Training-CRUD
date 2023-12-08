@@ -40,6 +40,7 @@
                 ob_end_flush();
 
             }else if( isset( $tc_task ) && 'update' == $tc_task ) {
+                print("<script>alert('Hello');</script>");
                 ob_start();
                 include_once( TR_CRUD_DIR . "/views/form/update.php" );
                 ob_end_flush();
@@ -100,7 +101,7 @@
                                             |
                                             <?php 
                                                 printf( 
-                                                    '<a href="%s">%s</a>',
+                                                    '<a class="tc-delete" href="%s">%s</a>',
                                                         add_query_arg( ['tc_task' => 'delete', 'id' => $row->id ], site_url( $current_slug ) ),
                                                         esc_html__( 'Delete' )
                                                 );
