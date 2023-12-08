@@ -63,7 +63,9 @@ class Shortcode {
             wp_enqueue_script( 'front-js', TR_CRUD_ASSET . '/front/js/front.js', ['jquery'], time(), true );
 
             $ajax_url = admin_url( 'admin-ajax.php' );
-            wp_localize_script( 'front-js', 'TC', array( 'ajax' => $ajax_url ) );
+            wp_localize_script( 'front-js', 'TC', array( 
+                'ajax' => $ajax_url,
+            ) );
         }
     }
 }

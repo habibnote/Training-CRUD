@@ -101,7 +101,7 @@
                                             |
                                             <?php 
                                                 printf( 
-                                                    '<a class="tc-delete" href="%s">%s</a>',
+                                                    '<a class="tc-delete" row-id="%s" href="%s">%s</a>', $row->id,
                                                         add_query_arg( ['tc_task' => 'delete', 'id' => $row->id ], site_url( $current_slug ) ),
                                                         esc_html__( 'Delete' )
                                                 );
@@ -127,8 +127,8 @@
     <div class="tc-popup">
         <p><?php esc_html_e( 'Are you sure you want to delete ?' ); ?></p>
         <p>
-            <button><?php esc_html_e( 'Cancel' ) ?></button>
-            <button><?php esc_html_e( 'OK' ) ?></button>
+            <button id="CancelButton"><?php esc_html_e( 'Cancel' ) ?></button>
+            <button id="okButton"><?php esc_html_e( 'OK' ) ?></button>
         </p>
     </div>
 
