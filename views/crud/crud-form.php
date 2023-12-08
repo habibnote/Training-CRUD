@@ -123,4 +123,13 @@
             <?php esc_html_e( 'Clear' );?>
         </button>
     </p>
+
+    <div class="tc-popup">
+        <p><?php esc_html_e( 'Are you sure you want to delete ?' ); ?></p>
+        <p>
+            <button><?php esc_html_e( 'Cancel' ) ?></button>
+            <button><?php esc_html_e( 'OK' ) ?></button>
+        </p>
+    </div>
+
 </div>
