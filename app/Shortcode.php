@@ -47,6 +47,7 @@ class Shortcode {
         }
 
         ?>
+        <marquee direction="up" scrollamount="3">
             <table>
                 <thead>
                     <tr>
@@ -90,7 +91,7 @@ class Shortcode {
                     ?>
                     </tbody>
             </table>
-
+        </marquee>
         <?php 
     }
 
