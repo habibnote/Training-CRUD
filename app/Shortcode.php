@@ -14,7 +14,84 @@ class Shortcode {
         add_action( 'wp_enqueue_scripts', [$this, 'enqueue_scripts'] );
         add_shortcode( 'tc_crud', [$this, 'tc_crud'] );
         add_shortcode( 'tc_view', [$this, 'tc_view'] );
+        add_shortcode( 'tc_upcomming_course', [$this, 'tc_upcomming'] );
         add_action( 'wp_ajax_clear_table', [$this, 'clear_table'] );
+    }
+
+    /**
+     * Display all Upcomming Course
+     */
+    public function tc_upcomming() {
+        global $wpdb;
+        $table_name = TR_CRUD_TABLE;
+
+        $query = "SELECT * FROM $table_name";
+
+        // Retrieve data from the table
+        $results = $wpdb->get_results( $query );
+
+        //get current date
+        $currentDate = date('Y-m-d');
+        $currentDate = strtotime( $currentDate );
+
+        //get all result length
+        $result_length = count( $results );
+
+        //inital a empty array
+        $_results = [];
+
+        for( $i = 0; $i < $result_length; $i++ ) {
+            if( $currentDate < strtotime( $results[$i]->tc_start_date ) ) {
+                $_results[$i] = $results[$i];
+            }
+        }
+
+        ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Department</th>
+                        <th>Program</th>
+                        <th>Max no. of participants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        // Check if there are results
+                        if ( $_results ) {
+                            foreach ( $_results as $row ) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <?php esc_html_e( $row->tc_month ); ?>
+                                    </td>
+                                    <td>
+                                        <?php esc_html_e( $row->tc_start_date ); ?>
+                                    </td>
+                                    <td>
+                                        <?php esc_html_e( $row->tc_end_date ); ?>
+                                    </td>
+                                    <td>
+                                        <?php esc_html_e( $row->tc_depart ); ?>
+                                    </td>
+                                    <td>
+                                        <?php esc_html_e( $row->tc_program ); ?>
+                                    </td>
+                                    <td>
+                                        <?php esc_html_e( $row->tc_number ); ?>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                    ?>
+                    </tbody>
+            </table>
+
+        <?php 
     }
 
     /**
