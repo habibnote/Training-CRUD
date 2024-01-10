@@ -41,7 +41,6 @@
                                     esc_html_e( $row->tc_month );
                                     printf( "<p>%s<p>",date("Y") );
                                 ?>
-
                             </td>
                             <td><?php esc_html_e( $row->tc_start_date );?></td>
                             <td><?php esc_html_e( $row->tc_end_date );?></td>
@@ -54,7 +53,7 @@
                                     $date2 = new DateTime( $end_date );
                 
                                     $interval   = $date1->diff( $date2 );
-                                    echo $interval->format( '%a days' );
+                                    echo $interval->days + 1 . ' days';
                                 ?> 
                             </td>
                             <td><?php esc_html_e( $row->tc_depart );?></td>
