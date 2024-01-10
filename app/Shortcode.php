@@ -51,12 +51,7 @@ class Shortcode {
             <table>
                 <thead>
                     <tr>
-                        <th>Month</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Department</th>
                         <th>Program</th>
-                        <th>Max no. of participants</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,22 +62,7 @@ class Shortcode {
                                 ?>
                                 <tr>
                                     <td>
-                                        <?php esc_html_e( $row->tc_month ); ?>
-                                    </td>
-                                    <td>
-                                        <?php esc_html_e( $row->tc_start_date ); ?>
-                                    </td>
-                                    <td>
-                                        <?php esc_html_e( $row->tc_end_date ); ?>
-                                    </td>
-                                    <td>
-                                        <?php esc_html_e( $row->tc_depart ); ?>
-                                    </td>
-                                    <td>
                                         <?php esc_html_e( $row->tc_program ); ?>
-                                    </td>
-                                    <td>
-                                        <?php esc_html_e( $row->tc_number ); ?>
                                     </td>
                                 </tr>
                                 <?php
