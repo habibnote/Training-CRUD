@@ -55,6 +55,7 @@
                             <th>Department</th>
                             <th>Program</th>
                             <th>Max no. of participants</th>
+                            <th>Attendance</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -88,6 +89,9 @@
                                         </td>
                                         <td>
                                             <?php esc_html_e( $row->tc_number ); ?>
+                                        </td>
+                                        <td>
+                                            <?php esc_html_e( $row->tc_attendance ); ?>
                                         </td>
                                         <td>
                                             <?php 
