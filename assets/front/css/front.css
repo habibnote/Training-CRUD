@@ -43,3 +43,17 @@ select{
 .tc-popup p{
     text-align: center;
 }
+
+/*Up Comming Course List*/
+.tr-upcomming-lists{
+    list-style-type: none;
+}
+.tr-upcomming-list{
+    color:#D35603;
+    margin: 8px 0;
+}
+.tr-upcomming-list img{
+    width: 14px;
+    height: 14px;
+}
+/*Up Comming Course List*/
