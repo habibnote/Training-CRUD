@@ -44,10 +44,10 @@ class Activate {
             ) $charset_collate;";
 
             // Include the upgrade file for dbDelta
-            require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+            require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
             // Run dbDelta
-            dbDelta($sql);
+            dbDelta( $sql );
         }
     }
 }
