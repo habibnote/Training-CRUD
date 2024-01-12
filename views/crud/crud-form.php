@@ -40,7 +40,6 @@
                 ob_end_flush();
 
             }else if( isset( $tc_task ) && 'update' == $tc_task ) {
-                print("<script>alert('Hello');</script>");
                 ob_start();
                 include_once( TR_CRUD_DIR . "/views/form/update.php" );
                 ob_end_flush();

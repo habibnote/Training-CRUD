@@ -79,7 +79,6 @@ class Shortcode {
         if( $wpdb->query( $sql ) ) {
             wp_send_json_success();
         }
-
     }
 
     /**
