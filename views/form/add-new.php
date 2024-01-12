@@ -16,8 +16,9 @@
         $tc_depart      = $_POST['tc_depart'] ?? '';
         $tc_program     = $_POST['tc_program'] ?? '';
         $tc_number      = $_POST['tc_number'] ?? '';
+        $tc_attendance  = $_POST['tc_attendance'] ?? '';
 
-        if( ! in_array( '', [ $tc_month, $tc_start_date, $tc_end_date, $tc_depart, $tc_program, $tc_number ] ) ) {
+        if( ! in_array( '', [ $tc_month, $tc_start_date, $tc_end_date, $tc_depart, $tc_program, $tc_number, $tc_attendance ] ) ) {
             global $wpdb;
 
             $table_name = TR_CRUD_TABLE;
@@ -29,6 +30,7 @@
                 'tc_depart'     => $tc_depart,
                 'tc_program'    => $tc_program,
                 'tc_number'     => $tc_number,
+                'tc_attendance' => $tc_attendance,
             );
 
             // Insert data into the table
@@ -101,6 +103,11 @@
     <p>
         <label for="tc_number">Max no. of participants:</label>
         <input type="text" name="tc_number" id="tc_number" required>
+    </p>
+
+    <p>
+        <label for="tc_attendance">Attendance:</label>
+        <input type="text" name="tc_attendance" id="tc_attendance" required>
     </p>
 
     <br><br>
