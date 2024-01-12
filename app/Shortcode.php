@@ -56,9 +56,10 @@ class Shortcode {
                     <ul class="tr-upcomming-lists">
                         <li class="tr-upcomming-list">
                             <?php
-                                printf( "<img src='%s' />", TR_CRUD_ASSET . '/img/right_news.png' );
-                                esc_html_e( $row->tc_program ); 
-                                printf( "<span>( %s : %s )</span>", __( 'Release Date', 'tr-crud' ), $row->tc_start_date );
+                                printf( "<img class='tr-icon' src='%s' />", TR_CRUD_ASSET . '/img/right_news.png' );
+                                esc_html_e( $row->tc_program );
+                                printf( " <img src='%s' />", TR_CRUD_ASSET . '/img/new.gif' );
+                                printf( " <span>( %s : %s )</span>", __( 'Release Date', 'tr-crud' ), $row->tc_start_date );
                             ?>
                         </li>
                     </ul>

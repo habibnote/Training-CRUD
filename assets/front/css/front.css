@@ -53,7 +53,15 @@ select{
     margin: 8px 0;
 }
 .tr-upcomming-list img{
+    width: 30px;
+    height: 14px;
+}
+.tr-upcomming-list .tr-icon{
     width: 14px;
     height: 14px;
+}
+.tr-upcomming-list span{
+    color: #000000;
+    font-size: 11px;
 }
 /*Up Comming Course List*/
