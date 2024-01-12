@@ -38,6 +38,7 @@ class Activate {
                 tc_start_date VARCHAR(255) NOT NULL,
                 tc_end_date VARCHAR(255) NOT NULL,
                 tc_depart VARCHAR(255) NOT NULL,
+                tc_attendance VARCHAR(255) NOT NULL,
                 tc_program VARCHAR(255) NOT NULL,
                 tc_number VARCHAR(255) NOT NULL,
                 PRIMARY KEY (id)
