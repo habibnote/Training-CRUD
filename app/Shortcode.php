@@ -53,11 +53,14 @@ class Shortcode {
             if ( $_results ) {
                 foreach ( $_results as $row ) {
                     ?>
-                    <tr>
-                        <td>
-                            <?php esc_html_e( $row->tc_program ); ?>
-                        </td>
-                    </tr>
+                    <ul class="tr-upcomming-lists">
+                        <li class="tr-upcomming-list">
+                            <?php
+                                printf( "<img src='%s' />", TR_CRUD_ASSET . '/img/right_news.png' );
+                                esc_html_e( $row->tc_program ); 
+                            ?>
+                        </li>
+                    </ul>
                     <?php
                 }
             }
