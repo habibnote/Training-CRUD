@@ -58,6 +58,7 @@ class Shortcode {
                             <?php
                                 printf( "<img src='%s' />", TR_CRUD_ASSET . '/img/right_news.png' );
                                 esc_html_e( $row->tc_program ); 
+                                printf( "<span>( %s : %s )</span>", __( 'Release Date', 'tr-crud' ), $row->tc_start_date );
                             ?>
                         </li>
                     </ul>
