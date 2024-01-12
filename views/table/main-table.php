@@ -59,8 +59,6 @@
                             <td><?php esc_html_e( $row->tc_depart );?></td>
                             <td><?php esc_html_e( $row->tc_depart );?></td>
                             <td><?php esc_html_e( $row->tc_number );?></td>
-
-                            
                         </tr>
                         <?php
                         $temp_month = $row->tc_month;

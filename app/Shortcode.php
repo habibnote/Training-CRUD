@@ -48,29 +48,20 @@ class Shortcode {
 
         ?>
         <marquee direction="up" scrollamount="3">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Program</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                        // Check if there are results
-                        if ( $_results ) {
-                            foreach ( $_results as $row ) {
-                                ?>
-                                <tr>
-                                    <td>
-                                        <?php esc_html_e( $row->tc_program ); ?>
-                                    </td>
-                                </tr>
-                                <?php
-                            }
-                        }
+        <?php 
+            // Check if there are results
+            if ( $_results ) {
+                foreach ( $_results as $row ) {
                     ?>
-                    </tbody>
-            </table>
+                    <tr>
+                        <td>
+                            <?php esc_html_e( $row->tc_program ); ?>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            }
+        ?>
         </marquee>
         <?php 
     }
@@ -104,9 +95,7 @@ class Shortcode {
      * View Table
      */
     public function tc_view() {
-        if( is_user_logged_in() ) {
-            include_once( TR_CRUD_DIR . "/views/table/main-table.php" );
-        }
+        include_once( TR_CRUD_DIR . "/views/table/main-table.php" );
     }
 
     /**
