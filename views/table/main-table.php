@@ -57,7 +57,7 @@
                                 ?> 
                             </td>
                             <td><?php esc_html_e( $row->tc_depart );?></td>
-                            <td><?php esc_html_e( $row->tc_depart );?></td>
+                            <td><?php esc_html_e( $row->tc_program );?></td>
                             <td><?php esc_html_e( $row->tc_number );?></td>
                         </tr>
                         <?php
