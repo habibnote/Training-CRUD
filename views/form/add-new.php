@@ -107,7 +107,7 @@
 
     <p>
         <label for="tc_attendance">Attendance:</label>
-        <input type="text" name="tc_attendance" id="tc_attendance" required>
+        <input type="text" name="tc_attendance" id="tc_attendance">
     </p>
 
     <br><br>
